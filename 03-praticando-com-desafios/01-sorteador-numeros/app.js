@@ -5,12 +5,18 @@ function sortear() {
 
   let sorteados = [];
 
-  quantidade.forEach(() => {
+  for (let i = 0; i < quantidade; i++) {
     let numero = obterNumeroAleatorio(de, ate);
-    sorteados.push(numero);
-  });
 
-  alert(sorteados);
+    while (sorteados.includes(numero)) {
+      numero = obterNumeroAleatorio(de, ate);
+    }
+    
+    sorteados.push(numero);
+  }
+
+  let resultado = document.getElementById("resultado");
+  resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados}</label>`;
 }
 
 function obterNumeroAleatorio(min, max) {
