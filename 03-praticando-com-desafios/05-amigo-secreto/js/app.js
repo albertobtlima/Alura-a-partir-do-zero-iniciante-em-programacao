@@ -9,24 +9,21 @@ function adicionar() {
     return;
   }
 
+  if (amigos.includes(nomeDoAmigo.value)) {
+    alert("Amigo ja adicionado");
+    nomeDoAmigo.value = "";
+    return;
+  }
+
   amigos.push(nomeDoAmigo.value);
 
   nomeDoAmigo.value = "";
   listaDeAmigos.textContent = amigos.join(", ");
 }
 
-function embaralhar(amigos) {
-  for (let i = amigos.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [amigos[i], amigos[j]] = [amigos[j], amigos[i]];
-  }
-
-  return amigos;
-}
-
 function sortear() {
   if (amigos.length < 4) {
-    alert("Adicione ao menos 4 amigos")
+    alert("Adicione ao menos 4 amigos");
     return;
   }
 
@@ -40,6 +37,15 @@ function sortear() {
       sorteio.innerHTML += amigos[i] + " -> " + amigos[i + 1] + "<br>";
     }
   }
+}
+
+function embaralhar(amigos) {
+  for (let i = amigos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [amigos[i], amigos[j]] = [amigos[j], amigos[i]];
+  }
+
+  return amigos;
 }
 
 function reiniciar() {
