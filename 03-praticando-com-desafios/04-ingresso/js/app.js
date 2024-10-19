@@ -1,55 +1,54 @@
-let qtdPista = parseInt(document.getElementById("qtd-pista").textContent);
-let qtdSuperior = document.getElementById("qtd-superior").textContent;
-let qtdInferior = document.getElementById("qtd-inferior").textContent;
-
 function comprar() {
-  let tipoDeIngreso = document.getElementById("tipo-ingresso").value;
-  let quantidade = parseInt(document.getElementById("qtd").value);
+  let tipo = document.getElementById("tipo-ingresso");
+  let qtdInput = document.getElementById("qtd");
+  let qtd = parseInt(qtdInput.value);
 
-  if (tipoDeIngreso == "pista") {
-    comprarPista(quantidade);
-  } else if (tipoDeIngreso == "superior") {
-    comprarSuperior(quantidade);
-  } else {
-    comprarInferior(quantidade);
+  if (isNaN(qtd) || qtd <= 0) {
+    alert("Por favor, insira uma quantidade válida.");
+    return;
   }
 
-  let lista = document.getElementById("lista");
-
-  lista.innerHTML = `
-    <li>Pista<span id="qtd-pista">${qtdPista}</span></li>
-    <li>Cadeira superior<span id="qtd-superior">${qtdSuperior}</span></li>
-    <li>Cadeira inferior<span id="qtd-inferior">${qtdInferior}</span></li>
-  `;
-}
-
-function comprarPista(quantidade) {
-  if (quantidade > qtdPista) {
-    alert("Quantidade indisponível para pista");
+  if (tipo.value == "pista") {
+    comprarPista(qtd);
+  } else if (tipo.value == "superior") {
+    comprarSuperior(qtd);
   } else {
-    qtdPista = qtdPista - quantidade;
-    qtdPista.textContent = qtdPista;
+    comprarInferior(qtd);
   }
 }
 
-function comprarSuperior(quantidade) {
-  if (quantidade > qtdSuperior) {
-    alert("Quantidade indisponível para cadeira superior");
+function comprarPista(qtd) {
+  let qtdPista = parseInt(document.getElementById("qtd-pista").textContent);
+  if (qtd > qtdPista) {
+    alert("Quantidade indisponível para tipo pista");
   } else {
-    qtdSuperior = qtdSuperior - quantidade;
-    qtdSuperior.textContent = qtdSuperior;
+    qtdPista = qtdPista - qtd;
+    document.getElementById("qtd-pista").textContent = qtdPista;
+    alert("Compra realizada com sucesso!");
   }
 }
 
-function comprarInferior(quantidade) {
-  if (quantidade > qtdInferior) {
-    alert("Quantidade indisponível para cadeira inferior");
+function comprarSuperior(qtd) {
+  let qtdSuperior = parseInt(document.getElementById("qtd-superior").textContent);
+  if (qtd > qtdSuperior) {
+    alert("Quantidade indisponível para tipo superior");
   } else {
-    qtdInferior = qtdInferior - quantidade;
-    qtdInferior.textContent = qtdInferior;
+    qtdSuperior = qtdSuperior - qtd;
+    document.getElementById("qtd-superior").textContent = qtdSuperior;
+    alert("Compra realizada com sucesso!");
   }
 }
 
+function comprarInferior(qtd) {
+  let qtdInferior = parseInt(document.getElementById("qtd-inferior").textContent);
+  if (qtd > qtdInferior) {
+    alert("Quantidade indisponível para tipo inferior");
+  } else {
+    qtdInferior = qtdInferior - qtd;
+    document.getElementById("qtd-inferior").textContent = qtdInferior;
+    alert("Compra realizada com sucesso!");
+  }
+}
 
 /* function comprar() {
   let tipoDeIngreso = document.getElementById("tipo-ingresso").value;
