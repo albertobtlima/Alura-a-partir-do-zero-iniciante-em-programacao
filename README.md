@@ -10,12 +10,12 @@
 
 Cursos:
 
-## 01 - Começando em Programação: carreira e primeiros passos (Curso teórico)
+01 - Começando em Programação: carreira e primeiros passos (Curso teórico)
 
-## 02 - Lógica de programação: mergulhe em programação com JavaScript
+02 - Lógica de programação: mergulhe em programação com JavaScript
 
-## 03 - Lógica de programação: explore funções e listas
+03 - Lógica de programação: explore funções e listas
 
-## 04 - Git e GitHub: Compartilhando e colaborando em projetos
+04 - Git e GitHub: Compartilhando e colaborando em projetos
 
-## 05 - Lógica de programação: praticando com desafios
+05 - Lógica de programação: praticando com desafios
