@@ -2,7 +2,7 @@
 
 **Carga horaria:** 30h
 
-**Cursos:** 4
+**Cursos:** 5
 
 **Artigos:** 2
 
