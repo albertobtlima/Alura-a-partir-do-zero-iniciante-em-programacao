@@ -8,7 +8,7 @@
 
 Planos de estudo com essa formação:
 
-Full-stack JavaScript: do zero ao avançado 3ª formação
+Full-stack JavaScript: do zero ao avançado 1ª formação
 
 ---
 
