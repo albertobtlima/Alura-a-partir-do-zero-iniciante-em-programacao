@@ -6,6 +6,10 @@
 
 **Artigos:** 2
 
+Planos de estudo com essa formação:
+
+Full-stack JavaScript: do zero ao avançado 3ª formação
+
 ---
 
 Cursos:
